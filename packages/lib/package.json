@@ -1,0 +1,33 @@
+{
+  "name": "@/lib",
+  "version": "0.0.1",
+  "private": true,
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "type": "module",
+  "types": "dist/index.d.ts",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "import": "./dist/index.js",
+      "require": "./dist/index.cjs"
+    },
+    "./schemas": {
+      "types": "./dist/schemas/index.d.ts",
+      "import": "./dist/schemas.js",
+      "require": "./dist/schemas.cjs"
+    }
+  },
+  "files": [
+    "dist",
+    "src"
+  ],
+  "scripts": {
+    "build": "vite build ",
+    "watch": "rimraf dist && vite build --watch"
+  },
+  "devDependencies": {
+  },
+  "peerDependencies": {
+  }
+}
